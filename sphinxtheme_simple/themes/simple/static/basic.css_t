@@ -8,17 +8,73 @@
  * :license: BSD, see LICENSE for details.
  *
  */
+@import url(http://fonts.googleapis.com/css?family=Gentium+Basic);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 /* -- main layout ----------------------------------------------------------- */
 
 div.clearer {
-    clear: both;
+  clear: both;
+}
+
+.document, .related, .footer {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.footer {
+  color: #888;
+  font-size: 70%;
+  padding: 20px;
+  text-align: center;
 }
 
 /* -- relbar ---------------------------------------------------------------- */
 
 div.related {
-    width: 100%;
     font-size: 90%;
 }
 
@@ -27,9 +83,8 @@ div.related h3 {
 }
 
 div.related ul {
-    margin: 0;
-    padding: 0 0 0 10px;
-    list-style: none;
+  margin: 20px;
+  list-style: none;
 }
 
 div.related li {
@@ -39,52 +94,6 @@ div.related li {
 div.related li.right {
     float: right;
     margin-right: 5px;
-}
-
-/* -- sidebar --------------------------------------------------------------- */
-
-div.sphinxsidebarwrapper {
-    padding: 10px 5px 0 10px;
-}
-
-div.sphinxsidebar {
-    float: left;
-    width: {{ theme_sidebarwidth|toint }}px;
-    margin-left: -100%;
-    font-size: 90%;
-}
-
-div.sphinxsidebar ul {
-    list-style: none;
-}
-
-div.sphinxsidebar ul ul,
-div.sphinxsidebar ul.want-points {
-    margin-left: 20px;
-    list-style: square;
-}
-
-div.sphinxsidebar ul ul {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-div.sphinxsidebar form {
-    margin-top: 10px;
-}
-
-div.sphinxsidebar input {
-    border: 1px solid #98dbcc;
-    font-family: sans-serif;
-    font-size: 1em;
-}
-
-div.sphinxsidebar #searchbox input[type="text"] {
-    width: 170px;
-}
-
-div.sphinxsidebar #searchbox input[type="submit"] {
-    width: 30px;
 }
 
 img {
@@ -186,10 +195,62 @@ div.genindex-jumpbox {
 
 /* -- general body styles --------------------------------------------------- */
 
-a.headerlink {
-    visibility: hidden;
+body {
+  font-family: 'Gentium Basic', serif;
+  font-size: 18px;
+  background: #FFFFFF;
+  color: #000000;
 }
 
+h1 {
+  font-size: 140%;
+}
+
+h2, h3 {
+  font-size: 120%;
+}
+h4, h5, h6 {
+  font-size: 110%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+em {
+  font-weight: bold;
+}
+
+ul, ol, p, h1, h2, h3, h4, h5, h6, .section {
+  margin: 1em 0;
+  line-height: 1.1em;
+}
+
+ul, ol {
+  margin-left: 20px;
+}
+
+li {
+  list-style-type: square;
+}
+
+a {
+    color: #0000FF;
+    text-decoration: none;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #000000;
+}
+a:visited {
+    color: #7690CF;
+}
+a:hover {
+    color: #000000;
+}
+a.headerlink {
+  font-size: 60%;
+  visibility: hidden;
+}
 h1:hover > a.headerlink,
 h2:hover > a.headerlink,
 h3:hover > a.headerlink,
@@ -251,25 +312,10 @@ img.align-center, .figure.align-center, object.align-center {
     text-align: right;
 }
 
-/* -- sidebars -------------------------------------------------------------- */
-
-div.sidebar {
-    margin: 0 0 0.5em 1em;
-    border: 1px solid #ddb;
-    padding: 7px 7px 0 7px;
-    background-color: #ffe;
-    width: 40%;
-    float: right;
-}
-
-p.sidebar-title {
-    font-weight: bold;
-}
 
 /* -- topics ---------------------------------------------------------------- */
 
 div.topic {
-    border: 1px solid #ccc;
     padding: 7px 7px 0 7px;
     margin: 10px 0 10px 0;
 }
@@ -283,9 +329,10 @@ p.topic-title {
 /* -- admonitions ----------------------------------------------------------- */
 
 div.admonition {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 7px;
+  color: #444;
+  font-size: 90%;
+  margin: 20px;
+  padding: 7px;
 }
 
 div.admonition dt {
@@ -297,7 +344,7 @@ div.admonition dl {
 }
 
 p.admonition-title {
-    margin: 0px 10px 5px 0px;
+    margin: 0px;
     font-weight: bold;
 }
 
@@ -384,7 +431,7 @@ dd {
 }
 
 dt:target, .highlighted {
-    background-color: #fbe54e;
+    font-weight: bold;
 }
 
 dl.glossary dt {
@@ -435,10 +482,6 @@ dl.glossary dt {
     margin-left: 1.5em;
 }
 
-.guilabel, .menuselection {
-    font-family: sans-serif;
-}
-
 .accelerator {
     text-decoration: underline;
 }
@@ -454,9 +497,19 @@ abbr, acronym {
 
 /* -- code displays --------------------------------------------------------- */
 
+.pre {
+  color: #666;
+  font-family: 'Menlo', 'Monaco', monospace;
+  font-size: 80%;
+  padding: 0 3px;
+}
 pre {
-    overflow: auto;
-    overflow-y: hidden;  /* fixes display issues on Chrome browsers */
+  font-family: 'Menlo', 'Monaco', monospace;
+  font-size: 80%;
+  color: #666;
+  overflow: auto;
+  overflow-y: hidden;  /* fixes display issues on Chrome browsers */
+  padding: 10px 20px;
 }
 
 td.linenos pre {
@@ -477,7 +530,6 @@ table.highlighttable td {
 tt.descname {
     background-color: transparent;
     font-weight: bold;
-    font-size: 1.2em;
 }
 
 tt.descclassname {
@@ -499,12 +551,32 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 
 .viewcode-back {
     float: right;
-    font-family: sans-serif;
 }
 
 div.viewcode-block:target {
     margin: -1px -10px;
     padding: 0 10px;
+}
+
+.class dt, .exception dt, .function dt, .method dt, .classmethod dt {
+  font-size: 14px;
+  font-family: 'Menlo', 'Monaco', monospace;
+  color: #000;
+}
+.class dd, .exception dd, .function dd, .method dd, .classmethod dd {
+  font-family: 'Gentium Basic', serif;
+  color: #555;
+}
+dl.class, dl.exception, dl.function, dl.method, dl.classmethod {
+  font-size: 14px;
+  padding: 0 1em;
+}
+dl.class, dl.exception, dl.function {
+  margin-bottom: 2em;
+}
+
+dl.method, dl.classmethod {
+  margin-bottom: 1em;
 }
 
 /* -- math display ---------------------------------------------------------- */
@@ -531,7 +603,6 @@ span.eqno {
         width: 100%;
     }
 
-    div.sphinxsidebar,
     div.related,
     div.footer,
     #top-link {
